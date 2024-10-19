@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEE9E7">
+
+    <!-- Header Layout -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:background="#B4572F"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <!-- Right Button Icon -->
+        <ImageButton
+            android:id="@+id/button_icon_right"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:background="?android:selectableItemBackground"
+            android:clipToPadding="false"
+            android:contentDescription="Menu Icon"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/list"
+            app:tint="@android:color/white" />
+    </RelativeLayout>
+
+    <!-- Title for Creating Event -->
+    <TextView
+        android:id="@+id/event_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creating Event"
+        android:textSize="25sp"
+        android:textColor="#114444"
+        android:layout_below="@id/header"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Event Creation Box -->
+    <LinearLayout
+        android:id="@+id/event_creation_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:layout_below="@id/event_title"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:elevation="2dp"
+        android:layout_marginHorizontal="16dp">
+
+        <!-- Restaurant Name -->
+        <EditText
+            android:id="@+id/restaurant_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chosen Restaurant"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:background="#F5F5F5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Deadline to Join -->
+        <EditText
+            android:id="@+id/deadline_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter deadline"
+            android:padding="8dp"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:background="#F5F5F5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Pickup or Eat at Restaurant -->
+        <RadioGroup
+            android:id="@+id/order_type_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/pickup_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:textStyle="bold|italic"
+                android:textColor="#114444"
+                android:fontFamily="sans-serif"
+                android:text="Pickup"
+                android:layout_marginEnd="16dp" />
+
+            <RadioButton
+                android:id="@+id/eat_at_restaurant_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:textStyle="bold|italic"
+                android:textColor="#114444"
+                android:fontFamily="sans-serif"
+                android:text="Eat at Restaurant" />
+        </RadioGroup>
+
+
+        <!-- ETA for Takeaway -->
+        <EditText
+            android:id="@+id/eta_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter ETA"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textStyle="bold|italic"
+            android:textColor="#114444"
+            android:fontFamily="sans-serif"
+            android:background="#F5F5F5"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            android:inputType="time" />
+
+
+        <!-- Ratings -->
+        <TextView
+            android:id="@+id/ratings_restaurant_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Rating"
+            android:textStyle="bold|italic"
+            android:textColor="#114444"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Restaurant Rating (1-5) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star"
+                android:contentDescription="Star Icon"
+                android:layout_marginEnd="8dp"
+                app:tint="#FFD700" />
+
+            <EditText
+                android:id="@+id/restaurant_rating_input"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0-5"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:background="#F5F5F5"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <!-- Food Rating (1-5) -->
+        <TextView
+            android:id="@+id/ratings_food_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Rating"
+            android:textStyle="bold|italic"
+            android:textColor="#114444"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star"
+                android:contentDescription="Star Icon"
+                android:layout_marginEnd="8dp"
+                app:tint="#FFD700" />
+
+            <EditText
+                android:id="@+id/food_rating_input"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0-5"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:background="#F5F5F5"
+                android:padding="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Button to Create Event (Outside the Box) -->
+    <Button
+        android:id="@+id/create_event_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:backgroundTint="#B4572F"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/event_creation_box"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
